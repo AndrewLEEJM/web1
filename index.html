@@ -1,34 +1,41 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
 <head>
-  <title>WEB1 - Welcome</title>
   <meta charset="utf-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="colors.js"></script>
+  <title>카지노 뿌시기</title>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-  <h1><a href="index.html">WEB</a></h1>
-  <input id="night_day" type="button" value="night" 
-  onclick=" nightDayHandler(this);">
+  <div id="grid">
+    <div class="list">
+      <H1><a href="index.html"> 카지노 뿌시기</a> </H1>
 
-  <ol id="nav">
 
-  </ol>
+      <ul id="nav">
 
-  <article>
+      </ul>
+    </div>
 
-  </article>
+
+    <div id="active">
+      <article>
+
+      </article>
+    </div>
+  </div>
+
   <script>
-    function fetchPage(name) {
-      fetch(name).then(function (response) {
-        response.text().then(function (text) {
-          document.querySelector('article').innerHTML = text;
-        })
-      });
-    }
-    if(location.hash){
+  function fetchPage(name) { 
+    fetch(name).then(function(response){
+      response.text().then(function(text){
+        document.querySelector('article').innerHTML = text;
+      })
+    })
+  }
+  if(location.hash){
       fetchPage(location.hash.substr(2));
     }else {
       fetchPage('welcome');
@@ -40,6 +47,7 @@
         })
       });
   </script>
+
 </body>
 
 </html>
